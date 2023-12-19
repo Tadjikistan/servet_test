@@ -22,7 +22,7 @@ const authOptions = {
 
                     const userExists = await User.findOne({name})
                     if (!userExists){
-                        const res = await fetch('https://servet-test.vercel.app/api/user', {
+                        const res = await fetch('/api/user', {
                         method: "POST",
                         headers: {"Content-type": "application/json",},
                         body: JSON.stringify({id, name, email, balance})
