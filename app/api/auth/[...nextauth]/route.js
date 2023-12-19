@@ -11,6 +11,7 @@ const authOptions = {
             clientSecret: process.env.DISCORD_CLIENT_SECRET,
         }),
     ],
+}
 //     callbacks: { //Получаем информацию о пользователе
 //         async signIn({user, account}) {
 //             console.log("User", user.id)
