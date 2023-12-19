@@ -6,7 +6,7 @@ import DiscordProvider from 'next-auth/providers/discord'
 const authOptions = {
     providers: [
         DiscordProvider({
-            callbackUrl: '/api/auth/callback',
+            callbackUrl: '/api/discord',
             clientId: process.env.DISCORD_CLIENT_ID,
             clientSecret: process.env.DISCORD_CLIENT_SECRET,
         }),
