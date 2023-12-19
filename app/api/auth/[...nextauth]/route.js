@@ -17,6 +17,7 @@ const authOptions = {
             console.log("User", user.id)
             console.log('Acc', account.provider)
             if (account.provider === 'discord') {
+                console.log('The provider is discord')
                 const {id, name, email} = user;
                 const balance = 300
                 try{
@@ -27,8 +28,10 @@ const authOptions = {
                         const res = await fetch('/api/user', {
                         method: "POST",
                         headers: {"Content-type": "application/json",},
-                        body: JSON.stringify({id, name, email, balance})
+                        body: JSON.stringify({id, name, email, balance}),
+                        
                     })
+                    console.log(id, name)
                     if (res.ok) {
                         return user;
                     }
