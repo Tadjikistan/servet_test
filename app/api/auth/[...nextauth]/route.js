@@ -6,7 +6,7 @@ import DiscordProvider from 'next-auth/providers/discord'
 const authOptions = {
     providers: [
         DiscordProvider({
-            callbackUrl: 'https://servet-test.vercel.app/api/discord/callback',
+            callbackUrl: 'https://discord.com/api/oauth2/authorize?client_id=1164601849937137735&response_type=code&redirect_uri=https%3A%2F%2Fservet-test.vercel.app%2Fapi%2Fdiscord%2Fcallback&scope=identify+email',
             clientId: process.env.DISCORD_CLIENT_ID,
             clientSecret: process.env.DISCORD_CLIENT_SECRET,
         }),
