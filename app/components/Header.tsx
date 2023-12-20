@@ -30,7 +30,7 @@ const Header:FC<head> = ({title}) => {
     };
 
     fetchUserData();
-  }, []) ): (console.log('I cant see fetched data'))}
+  }, []) )}
   return (
     <>
         <header className='header bg-[#141414] px-8'>
