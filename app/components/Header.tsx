@@ -1,34 +1,13 @@
-"use client"
 import Image from 'next/image'
-import React, { FC, useEffect, useState } from 'react'
+import React, { FC } from 'react'
 import coin from './../assets/Coin.svg'
-import {connectMongoDB} from '@/lib/mongodb'
-import User from "@/models/user.js"
+
 type head = {
   title: string
 }
 
 
 const Header:FC<head> = ({title}) => {
-  const [balance, setBalance] = useState(null) 
-  useEffect(() => {
-    const fetchUserData = async () => {
-      try {
-        await connectMongoDB(); // Connect to the MongoDB database
-
-        // Fetch the data from MongoDB using Mongoose
-        const userData = await User.findOne({ name: '_xsel' }); // Replace 'John' with the user's name you want to fetch
-
-        if (userData) {
-          setBalance(userData.balance);
-        }
-      } catch (error) {
-        console.error('Error fetching user data:', error);
-      }
-    };
-
-    fetchUserData();
-  }, [])
   return (
     <>
         <header className='header bg-[#141414] px-8'>
@@ -36,7 +15,7 @@ const Header:FC<head> = ({title}) => {
                 <h2>{title}</h2>
                 <div className='flex gap-2'>
                     <Image src={coin} alt={'coin-icon'} />
-                    {balance !== null && <p>{balance}</p>}
+                    <p>400</p>
                 </div>
             </div>
         </header>
