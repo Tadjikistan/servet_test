@@ -4,15 +4,13 @@ import React, { FC, useEffect, useState } from 'react'
 import coin from './../assets/Coin.svg'
 import {connectMongoDB} from '@/lib/mongodb'
 import User from "@/models/user.js"
-import { useSession } from 'next-auth/react'
 type head = {
   title: string
 }
 
 
 const Header:FC<head> = ({title}) => {
-  const [balance, setBalance] = useState(null)
-  const { status } = useSession()
+  const [balance, setBalance] = useState(null) 
   useEffect(() => {
     const fetchUserData = async () => {
       try {
@@ -38,9 +36,7 @@ const Header:FC<head> = ({title}) => {
                 <h2>{title}</h2>
                 <div className='flex gap-2'>
                     <Image src={coin} alt={'coin-icon'} />
-                    {status === "authenticated" ? (
-                      <p>{balance}</p>
-                    ): (<p>400</p>)}
+                    {balance !== <p>400</p> && <p>{balance}</p>}
                 </div>
             </div>
         </header>
