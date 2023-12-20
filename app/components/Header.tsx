@@ -13,7 +13,7 @@ type head = {
 const Header:FC<head> = ({title}) => {
   const [balance, setBalance] = useState(null)
   const { status } = useSession()
-  { status === "authenticated" ? (useEffect(() => {
+  useEffect(() => {
     const fetchUserData = async () => {
       try {
         await connectMongoDB(); // Connect to the MongoDB database
@@ -30,7 +30,7 @@ const Header:FC<head> = ({title}) => {
     };
 
     fetchUserData();
-  }, []) )}
+  }, [])
   return (
     <>
         <header className='header bg-[#141414] px-8'>
