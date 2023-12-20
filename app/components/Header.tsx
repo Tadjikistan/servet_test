@@ -16,14 +16,14 @@ const Header:FC<head> = ({title}) => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        await connectMongoDB(); // Connect to the MongoDB database
-
-        // Fetch the data from MongoDB using Mongoose
-        const userData = await User.findOne({ name: '_xsel' }); // Replace 'John' with the user's name you want to fetch
-
+        await connectMongoDB(); 
+        const userData = await User.findOne({ name: '_xsel' }); 
+        console.log(userData)
         if (userData) {
           setBalance(userData.balance);
+          
         }
+        
       } catch (error) {
         console.error('Error fetching user data:', error);
       }
