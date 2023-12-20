@@ -36,7 +36,7 @@ const Header:FC<head> = ({title}) => {
                 <h2>{title}</h2>
                 <div className='flex gap-2'>
                     <Image src={coin} alt={'coin-icon'} />
-                    {balance !== <p>400</p> && <p>{balance}</p>}
+                    {balance !== null && <p>{balance}</p>}
                 </div>
             </div>
         </header>
