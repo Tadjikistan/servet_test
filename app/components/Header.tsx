@@ -27,7 +27,7 @@ const Header:FC<head> = ({title}) => {
       } catch (error) {
         console.error('Error fetching user data:', error);
       }
-    }
+    };
 
     fetchUserData();
   }, []) 
@@ -38,7 +38,7 @@ const Header:FC<head> = ({title}) => {
                 <h2>{title}</h2>
                 <div className='flex gap-2'>
                     <Image src={coin} alt={'coin-icon'} />
-                    {typeof window !== 'undefined' && status === "authenticated" ? (
+                    {status === "authenticated" ? (
                       <p>{balance}</p>
                     ): (<p>400</p>)}
                 </div>
